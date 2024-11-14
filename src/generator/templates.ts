@@ -1,5 +1,7 @@
 export const boilerplat = `
-import validation from "../validation-api/validation-api"
+import validations from "../utils/validation-utils";
+import payloadUtils from "../utils/payload-utils";
+
 
 `;
 
@@ -11,7 +13,7 @@ export const baseFunction = (
 	operationCode: string
 ) => `
 function ${name}(payload : any){
-    const scope = validation.getScope(payload, "${contextQuery}");
+    const scope = payloadUtils.getJsonPath(payload, "${contextQuery}");
     ${variablesCode}
     // const cont = ${continueCode};
     ${operationCode};
@@ -23,9 +25,21 @@ export const staticVariableTemplate = (
 ) => {
 	let vals = values.map((v) => `"${v}"`).join(", ");
 	vals = vals.replace(/"/g, "'");
-	return `const ${variableName} = validation.createStaticVariable([${vals}]);`;
+	return `const ${variableName} = [${vals}];`;
 };
 
 export const pathVariableTemplate = (variableName: string, path: string) => {
-	return `const ${variableName} = validation.createPathVariable("${path}", payload);`;
+	return `const ${variableName} = payloadUtils.getJsonPath( payload,"${path}");`;
+};
+
+export const UnaryOperationTemplate = (varName: string, operation: string) => {
+	return `validations.${operation}(${varName});`;
+};
+
+export const BinaryOperationTemplate = (
+	leftVar: string,
+	rightVar: string,
+	operation: string
+) => {
+	return `validations.${operation}(${leftVar},${rightVar});`;
 };

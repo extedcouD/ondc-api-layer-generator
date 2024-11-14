@@ -3,14 +3,17 @@ import {
 	boilerplat,
 	pathVariableTemplate,
 	staticVariableTemplate,
+	UnaryOperationTemplate,
 } from "./templates";
 import { CodeConfig } from "../types/types";
 import { ConfigKeyWords, nodeKeywords } from "../constants/syntax-constants";
 import { checkVariableSyntax, isValidJsonPath } from "./compilation-checks";
 import {
 	knownOperations,
+	knownUnaryOperations,
 	operandKeywords,
 } from "../constants/operation-constants";
+import { extractOperationType } from "./utils";
 
 export function compileSingleConfig(config: CodeConfig) {
 	Object.keys(config)
@@ -72,7 +75,7 @@ function compileOperations(config: CodeConfig) {
 	);
 	// resolve brackates and extract th operations inside the brackets
 	const singleOperationCode = compileSingleOperation(retrn, variableNames);
-	return singleOperationCode;
+	return `return ` + singleOperationCode;
 }
 
 function compileSingleOperation(operation: string, variables: string[]) {
@@ -80,4 +83,8 @@ function compileSingleOperation(operation: string, variables: string[]) {
 	if (!knownOperations.includes(operationType)) {
 		throw new Error("Unknown operation type: " + operationType);
 	}
+	if (knownUnaryOperations.includes(operationType)) {
+		return UnaryOperationTemplate(variables[0], operationType);
+	}
+	return "";
 }

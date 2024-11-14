@@ -1,14 +1,15 @@
 import { writeFileSync } from "fs";
 import { compileSingleConfig } from "./generator";
+import path from "path";
 
 const test = {
 	_NAME_: "test1",
 	temp: "context.action",
 	enum2: ["1", "2"],
-	_RETURN_: "temp ALL IN enum2",
+	_RETURN_: "temp ARE UNIQUE",
 };
 
 writeFileSync(
-	"/Users/rudranshsinghal/ondc/automation-utility/test-packages/ondc-firewall-generator/validation-api/generated.ts",
+	path.resolve(__dirname, "../validation-api/validations/validations.ts"),
 	compileSingleConfig(test)
 );
