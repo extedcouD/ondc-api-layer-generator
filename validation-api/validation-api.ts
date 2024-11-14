@@ -1,15 +1,22 @@
+import { Variable } from "./classes/variable";
 import { extractValues } from "./utils";
-import { Variable } from "./variable";
+
+import jsonpath from "jsonpath";
+
+function getScope(payload: any, contextQuery: string) {
+	return jsonpath.query(payload, contextQuery);
+}
 
 function createStaticVariable(values: string[]) {
-  return new Variable(values);
+	return new Variable(values);
 }
 
 function createPathVariable(path: string, payload: any) {
-  return new Variable(extractValues(path, payload));
+	return new Variable(extractValues(path, payload));
 }
 
 export default {
-  createStaticVariable,
-  createPathVariable,
+	createStaticVariable,
+	createPathVariable,
+	getScope,
 };

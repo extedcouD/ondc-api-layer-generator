@@ -1,48 +1,83 @@
-import { writeFileSync } from "fs";
-import { baseFunction, boilerplat, staticVariableTemplate } from "./templates";
+import {
+	baseFunction,
+	boilerplat,
+	pathVariableTemplate,
+	staticVariableTemplate,
+} from "./templates";
 import { CodeConfig } from "../types/types";
-import { ConfigKeyWords, nodeKeywords } from "../constants/syntax-contants";
-import { checkVariableSyntax } from "./compilation-checks";
+import { ConfigKeyWords, nodeKeywords } from "../constants/syntax-constants";
+import { checkVariableSyntax, isValidJsonPath } from "./compilation-checks";
+import {
+	knownOperations,
+	operandKeywords,
+} from "../constants/operation-constants";
 
-function compileConfig(config: CodeConfig) {
-  const scopeQuery = "";
-  const variablesCode = complieVariables(config);
-  const returnCode = "";
-  const boiler = boilerplat;
-  return (
-    boiler +
-    baseFunction(config._NAME_, scopeQuery, variablesCode, "true", returnCode)
-  );
+export function compileSingleConfig(config: CodeConfig) {
+	Object.keys(config)
+		.filter((k) => !ConfigKeyWords.includes(k))
+		.forEach((element) => {
+			if (nodeKeywords.has(element) || operandKeywords.has(element)) {
+				throw new Error("Invalid variable name: " + element);
+			}
+		});
+
+	const scopeQuery = compileScopeQuery(config._SCOPE_);
+	const variablesCode = compileVariables(config);
+	const operationCode = compileOperations(config);
+	const continueCode = "false";
+	const boiler = boilerplat;
+	return (
+		boiler +
+		baseFunction(
+			config._NAME_,
+			scopeQuery,
+			variablesCode,
+			continueCode,
+			operationCode
+		)
+	);
 }
 
-function complieVariables(config: CodeConfig) {
-  const keys = Object.keys(config);
-  let result = "";
-  for (const key in config) {
-    if (nodeKeywords.has(key)) {
-      throw new Error("Invalid variable name: " + key);
-    }
-    if (ConfigKeyWords.includes(key)) continue;
-    if (!checkVariableSyntax(config[key])) {
-      throw new Error(
-        "Invalid variable syntax: " + JSON.stringify(config[key])
-      );
-    }
-    if (Array.isArray(config[key])) {
-      result += staticVariableTemplate(key, config[key]);
-    }
-  }
-  return result;
+function compileVariables(config: CodeConfig) {
+	const keys = Object.keys(config);
+	let result = "";
+	for (const key in config) {
+		if (config[key] === undefined) {
+			throw new Error("Undefined variable value: " + key);
+		}
+		if (ConfigKeyWords.includes(key)) continue;
+		if (!checkVariableSyntax(config[key])) {
+			throw new Error(
+				"Invalid variable syntax: " + JSON.stringify(config[key])
+			);
+		}
+		if (Array.isArray(config[key])) {
+			result += "\n\t" + staticVariableTemplate(key, config[key]);
+		} else {
+			result += "\n\t" + pathVariableTemplate(key, config[key]);
+		}
+	}
+	return result;
+}
+function compileScopeQuery(scope: string | undefined) {
+	// should only result to object or array of objects
+	scope = scope ?? "$";
+	if (isValidJsonPath(scope)) return scope;
+	throw new Error("Invalid scope query: " + scope);
+}
+function compileOperations(config: CodeConfig) {
+	const retrn = config._RETURN_;
+	const variableNames = Object.keys(config).filter(
+		(key) => !ConfigKeyWords.includes(key)
+	);
+	// resolve brackates and extract th operations inside the brackets
+	const singleOperationCode = compileSingleOperation(retrn, variableNames);
+	return singleOperationCode;
 }
 
-const test = {
-  _NAME_: "test1",
-  // temp: "context.action",
-  enum2: ["ALL", "NONE"],
-  _RETURN_: "temp.ALL in enum",
-};
-
-writeFileSync(
-  "/Users/rudranshsinghal/ondc/automation-utility/test-packages/ondc-firewall-generator/validation-api/generated.ts",
-  compileConfig(test)
-);
+function compileSingleOperation(operation: string, variables: string[]) {
+	const operationType = extractOperationType(operation, variables);
+	if (!knownOperations.includes(operationType)) {
+		throw new Error("Unknown operation type: " + operationType);
+	}
+}

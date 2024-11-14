@@ -93,11 +93,6 @@ const data = {
 };
 
 // JSONPath query to get 'price' values
-const prices = jsonpath.query(data, "$.id");
-// Normalize results to handle missing attributes explicitly
-const normalizedPrices = data.items.map((item) =>
-  item.price !== undefined ? item.price : null
-);
+const prices = jsonpath.query({}, "$");
 
 console.log("Prices with JSONPath:", prices); // Output with JSONPath query
-console.log("Prices with normalization:", normalizedPrices); // Output with missing values set to null
