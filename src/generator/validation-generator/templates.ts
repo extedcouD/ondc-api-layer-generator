@@ -14,7 +14,7 @@ export const baseFunction = (
 ) => `
 function ${name}(payload : any){
     const scope = payloadUtils.getJsonPath(payload, "${contextQuery}");
-	for(const ob of scope){
+	for(const testObj of scope){
 		${variablesCode}
 		const skipCheck = ${continueCode};
 		if(skipCheck) continue;
@@ -34,7 +34,7 @@ export const staticVariableTemplate = (
 };
 
 export const pathVariableTemplate = (variableName: string, path: string) => {
-	return `const ${variableName} = payloadUtils.getJsonPath( payload,"${path}");`;
+	return `const ${variableName} = payloadUtils.getJsonPath( testObj,"${path}");`;
 };
 
 export const UnaryOperationTemplate = (varName: string, operation: string) => {

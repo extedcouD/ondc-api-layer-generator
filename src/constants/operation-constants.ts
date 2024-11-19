@@ -15,8 +15,8 @@ export const knownBinaryOperations = [
 	"ANY_IN",
 	"NONE_IN",
 	"EQUAL_TO",
+	"FOLLOW_REGEX",
 ];
-export const knownRegexOperations = ["FOLLOW_REGEX"];
 
 export const operandKeywords = new Set(
 	knownOperations.flatMap((op) => op.split("_"))

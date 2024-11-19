@@ -63,15 +63,18 @@ export function replaceLogicalOperands(
 ): string {
 	let replacementIndex = 0;
 
+	// Match all content inside parentheses while preserving the original input structure
 	const result = input.replace(/\(([^()]+)\)/g, () => {
+		// Use replacements sequentially
 		if (replacementIndex < replacements.length) {
 			return `(${replacements[replacementIndex++]})`;
 		}
 		throw new Error(
-			"Not enough replacements provided for all parentheses in the input string."
+			"Not enough replacements provided for all parenthesized expressions."
 		);
 	});
 
+	// Validate if replacements are exhausted or extra replacements exist
 	if (replacementIndex < replacements.length) {
 		throw new Error("Too many replacements provided; not all were used.");
 	}

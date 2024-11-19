@@ -1,20 +1,20 @@
 import { writeFileSync } from "fs";
-import { compileSingleConfig } from "./generator";
+import { compileSingleConfig } from "./generator/validation-generator";
 import path from "path";
 import prettier from "prettier";
 
 const test = {
 	_NAME_: "test1",
 	temp: "context.action",
-	enum2: ["1", "2"],
-	_RETURN_: "((temp ARE UNIQUE) && (temp ALL IN enum2)) || (enum2 ARE UNIQUE)",
+	reg: ["regex"],
+	_RETURN_: "(temp follow regex reg) && (temp all in reg)",
 };
 
 const main = async () => {
 	const code = compileSingleConfig(test);
 	const formattedCode = await prettier.format(code, {
 		parser: "typescript",
-		tabWidth: 2,
+		tabWidth: 4,
 	});
 
 	writeFileSync(

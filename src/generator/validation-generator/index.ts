@@ -6,8 +6,8 @@ import {
 	staticVariableTemplate,
 	UnaryOperationTemplate,
 } from "./templates";
-import { CodeConfig } from "../types/types";
-import { ConfigKeyWords, nodeKeywords } from "../constants/syntax-constants";
+
+import { ConfigKeyWords, nodeKeywords } from "../../constants/syntax-constants";
 import {
 	checkVariableSyntax,
 	isValidJsonPath,
@@ -18,12 +18,13 @@ import {
 	knownOperations,
 	knownUnaryOperations,
 	operandKeywords,
-} from "../constants/operation-constants";
+} from "../../constants/operation-constants";
 import {
 	extractOperationType,
 	replaceLogicalOperands,
 	validateBrackets,
 } from "./utils";
+import { CodeConfig } from "../../types/types";
 
 export function compileSingleConfig(config: CodeConfig) {
 	Object.keys(config)
@@ -88,6 +89,7 @@ function compileOperations(config: CodeConfig, retrn: string) {
 		(key) => !ConfigKeyWords.includes(key)
 	);
 	const brackates = validateBrackets(retrn);
+	console.log(retrn, brackates);
 	if (!brackates.isValid) {
 		throw new Error("Invalid brackets: " + retrn);
 	}
