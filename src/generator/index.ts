@@ -1,5 +1,6 @@
 import {
 	baseFunction,
+	BinaryOperationTemplate,
 	boilerplat,
 	pathVariableTemplate,
 	staticVariableTemplate,
@@ -7,13 +8,22 @@ import {
 } from "./templates";
 import { CodeConfig } from "../types/types";
 import { ConfigKeyWords, nodeKeywords } from "../constants/syntax-constants";
-import { checkVariableSyntax, isValidJsonPath } from "./compilation-checks";
 import {
+	checkVariableSyntax,
+	isValidJsonPath,
+	validateReturnString,
+} from "./compilation-checks";
+import {
+	knownBinaryOperations,
 	knownOperations,
 	knownUnaryOperations,
 	operandKeywords,
 } from "../constants/operation-constants";
-import { extractOperationType } from "./utils";
+import {
+	extractOperationType,
+	replaceLogicalOperands,
+	validateBrackets,
+} from "./utils";
 
 export function compileSingleConfig(config: CodeConfig) {
 	Object.keys(config)
@@ -26,8 +36,10 @@ export function compileSingleConfig(config: CodeConfig) {
 
 	const scopeQuery = compileScopeQuery(config._SCOPE_);
 	const variablesCode = compileVariables(config);
-	const operationCode = compileOperations(config);
-	const continueCode = "false";
+	const operationCode = compileOperations(config, config._RETURN_);
+	const continueCode = config._CONTINUE_
+		? compileOperations(config, config._CONTINUE_)
+		: "false";
 	const boiler = boilerplat;
 	return (
 		boiler +
@@ -68,14 +80,22 @@ function compileScopeQuery(scope: string | undefined) {
 	if (isValidJsonPath(scope)) return scope;
 	throw new Error("Invalid scope query: " + scope);
 }
-function compileOperations(config: CodeConfig) {
-	const retrn = config._RETURN_;
+function compileOperations(config: CodeConfig, retrn: string) {
+	if (!validateReturnString(retrn)) {
+		throw new Error("Invalid return string: " + retrn);
+	}
 	const variableNames = Object.keys(config).filter(
 		(key) => !ConfigKeyWords.includes(key)
 	);
-	// resolve brackates and extract th operations inside the brackets
-	const singleOperationCode = compileSingleOperation(retrn, variableNames);
-	return `return ` + singleOperationCode;
+	const brackates = validateBrackets(retrn);
+	if (!brackates.isValid) {
+		throw new Error("Invalid brackets: " + retrn);
+	}
+	const converted = brackates.extractedTexts
+		.filter((s) => !["&&", "||"].includes(s))
+		.map((s) => compileSingleOperation(s, variableNames));
+	const returnCode = replaceLogicalOperands(retrn, converted);
+	return returnCode;
 }
 
 function compileSingleOperation(operation: string, variables: string[]) {
@@ -86,5 +106,9 @@ function compileSingleOperation(operation: string, variables: string[]) {
 	if (knownUnaryOperations.includes(operationType)) {
 		return UnaryOperationTemplate(variables[0], operationType);
 	}
+	if (knownBinaryOperations.includes(operationType)) {
+		return BinaryOperationTemplate(variables[0], variables[1], operationType);
+	}
+
 	return "";
 }

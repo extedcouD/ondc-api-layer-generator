@@ -5,6 +5,8 @@ export const knownOperations = [
 	"EQUAL_TO",
 	"FOLLOW_REGEX",
 	"NONE_IN",
+	"&&",
+	"||",
 ];
 
 export const knownUnaryOperations = ["ARE_UNIQUE"];

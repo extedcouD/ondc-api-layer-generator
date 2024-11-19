@@ -14,9 +14,14 @@ export const baseFunction = (
 ) => `
 function ${name}(payload : any){
     const scope = payloadUtils.getJsonPath(payload, "${contextQuery}");
-    ${variablesCode}
-    // const cont = ${continueCode};
-    ${operationCode};
+	for(const ob of scope){
+		${variablesCode}
+		const skipCheck = ${continueCode};
+		if(skipCheck) continue;
+		const output = ${operationCode};
+		if(!output) return false;
+	}
+    return true;
 }`;
 
 export const staticVariableTemplate = (
@@ -33,7 +38,14 @@ export const pathVariableTemplate = (variableName: string, path: string) => {
 };
 
 export const UnaryOperationTemplate = (varName: string, operation: string) => {
-	return `validations.${operation}(${varName});`;
+	return `validations.${operation}(${varName})`;
+};
+export const UnaryOperationTemplateWithReturn = (
+	var1: string,
+	var2: string,
+	operation: string
+) => {
+	return `validations.${operation}(${var1},${var2})`;
 };
 
 export const BinaryOperationTemplate = (
@@ -41,5 +53,5 @@ export const BinaryOperationTemplate = (
 	rightVar: string,
 	operation: string
 ) => {
-	return `validations.${operation}(${leftVar},${rightVar});`;
+	return `validations.${operation}(${leftVar},${rightVar})`;
 };
