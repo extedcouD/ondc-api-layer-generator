@@ -1,7 +1,4 @@
 export const boilerplat = `
-import validations from "../utils/validation-utils";
-import payloadUtils from "../utils/payload-utils";
-
 
 `;
 

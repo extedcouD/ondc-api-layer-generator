@@ -1,0 +1,4162 @@
+{
+	"search": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.message.intent.fulfillment.vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.message.intent.payment.tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.intent.payment.tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.intent.payment.tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.intent.payment.tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.intent.payment.tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.intent.payment.tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.intent.payment.tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.intent.payment.tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["search"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.intent.fulfillment.vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.intent.fulfillment.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.intent.fulfillment.stops[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["QR"],
+			"enumPath": "$.message.intent.fulfillment.stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.intent.fulfillment.stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"select": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["select"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": [
+				"SOFT_CANCEL",
+				"CONFIRM_CANCEL",
+				"ACTIVE",
+				"COMPLETE",
+				"CANCELLED"
+			],
+			"enumPath": "$.message.order.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"init": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["init"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": [
+				"SOFT_CANCEL",
+				"CONFIRM_CANCEL",
+				"ACTIVE",
+				"COMPLETE",
+				"CANCELLED"
+			],
+			"enumPath": "$.message.order.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"confirm": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.payments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.payments[*].params.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.payments[*].params.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.payments[*].params.amount",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.payments[*].params.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.payments[*].params.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.payments[*].params.amount",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["confirm"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.order.payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.order.payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.order.payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"status": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["status"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"cancel": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.cancellation_reason_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["cancel"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SOFT-CANCEL", "CONFIRM-CANCEL"],
+			"enumPath": "$.message.descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_search": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.catalog.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.catalog.providers[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.catalog.providers[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.catalog.providers[*].fulfillments[*].vehicle.cargo_volumne",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.catalog.providers[*].items[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.catalog.providers[*].items[*].price.listed_value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.catalog.providers[*].items[*].price.listed_value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.catalog.providers[*].payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.catalog.providers[*].payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.catalog.providers[*].payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.catalog.providers[*].categories[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.catalog.providers[*].categories[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.catalog.providers[*].time.range.start",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.catalog.providers[*].time.range.end",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.catalog.providers[*].payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_search"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["TICKET", "PASS"],
+			"enumPath": "$.message.catalog.providers[*].categories[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.catalog.providers[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.catalog.providers[*].fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.catalog.providers[*].fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.catalog.providers[*].fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["QR"],
+			"enumPath": "$.message.catalog.providers[*].fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.catalog.providers[*].fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.catalog.providers[*].payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.catalog.providers[*].payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.catalog.providers[*].payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_select": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.items[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.items[*].fulfillment_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.items[*].time.label",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.items[*].time.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.provider.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.fulfillments[*].vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.fulfillments[*].vehicle.cargo_volumne",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.quote.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.quote.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.quote.breakup[*].title",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.quote.breakup[*].item.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.items[*].category_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.provider.time.range.start",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.order.provider.time.range.end",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.order.quote.breakup[*].item.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.order.quote.breakup[*].item.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.order.quote.breakup[*].item.quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.url",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_44",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.mimetype",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_select"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": [
+				"SOFT_CANCEL",
+				"CONFIRM_CANCEL",
+				"ACTIVE",
+				"COMPLETE",
+				"CANCELLED"
+			],
+			"enumPath": "$.message.order.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_init": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.items[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.items[*].fulfillment_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.items[*].time.label",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.items[*].time.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.provider.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.fulfillments[*].vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.fulfillments[*].vehicle.cargo_volumne",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.quote.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.quote.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.quote.breakup[*].title",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.quote.breakup[*].item.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.payments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_44",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_45",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_46",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_47",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_48",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_49",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_50",
+			"attr": "$.message.order.items[*].category_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_51",
+			"attr": "$.message.order.provider.time.range.start",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_52",
+			"attr": "$.message.order.provider.time.range.end",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_53",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_54",
+			"attr": "$.message.order.quote.breakup[*].item.quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_55",
+			"attr": "$.message.order.quote.breakup[*].item.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_56",
+			"attr": "$.message.order.quote.breakup[*].item.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_57",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.url",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_58",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.mimetype",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_init"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.order.payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.order.payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.order.payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_confirm": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.items[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.items[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.items[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.items[*].fulfillment_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.items[*].time.label",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.items[*].time.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.provider.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.fulfillments[*].vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.fulfillments[*].vehicle.cargo_volumne",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.quote.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.quote.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.quote.breakup[*].title",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.quote.breakup[*].item.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.order.payments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.order.payments[*].params.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.order.payments[*].params.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_44",
+			"attr": "$.message.order.payments[*].params.amount",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_45",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_46",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_47",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_48",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_49",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_50",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_51",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_52",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_53",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_54",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_55",
+			"attr": "$.message.order.cancellation_terms[*].cancel_by.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_56",
+			"attr": "$.message.order.cancellation_terms[*].cancellation_fee.percentage",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_57",
+			"attr": "$.message.order.status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_58",
+			"attr": "$.message.order.items[*].category_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_59",
+			"attr": "$.message.order.provider.time.range.start",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_60",
+			"attr": "$.message.order.provider.time.range.end",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_61",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_62",
+			"attr": "$.message.order.quote.breakup[*].item.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_63",
+			"attr": "$.message.order.quote.breakup[*].item.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_64",
+			"attr": "$.message.order.quote.breakup[*].item.quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_65",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.url",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_66",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.mimetype",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_67",
+			"attr": "$.message.order.created_at",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_68",
+			"attr": "$.message.order.updated_at",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_confirm"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.order.payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.order.payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.order.payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_cancel": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.items[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.items[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.items[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.items[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.items[*].fulfillment_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.items[*].category_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.items[*].time.label",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.items[*].time.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.provider.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.provider.descriptor.images[*].url",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.provider.time.range.start",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.provider.time.range.end",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.fulfillments[*].vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.quote.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.order.quote.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.order.quote.breakup[*].title",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.order.payments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_44",
+			"attr": "$.message.order.payments[*].params.bank_code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_45",
+			"attr": "$.message.order.payments[*].params.bank_account_number",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_46",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.url",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_47",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.mimetype",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_48",
+			"attr": "$.message.order.cancellation.cancelled_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_49",
+			"attr": "$.message.order.cancellation.time",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_cancel"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.order.payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.order.payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.order.payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_update": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.items[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.items[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.items[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.items[*].fulfillment_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.items[*].time.label",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.items[*].time.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.provider.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.fulfillments[*].stops[*].instructions.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.fulfillments[*].stops[*].authorization.token",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.fulfillments[*].stops[*].authorization.valid_to",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.fulfillments[*].vehicle.category",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.order.fulfillments[*].vehicle.cargo_volumne",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.order.quote.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.order.quote.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.order.quote.breakup[*].title",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.order.quote.breakup[*].item.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_44",
+			"attr": "$.message.order.quote.breakup[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_45",
+			"attr": "$.message.order.quote.breakup[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_46",
+			"attr": "$.message.order.payments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_47",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_48",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_49",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_50",
+			"attr": "$.message.order.payments[*].params.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_51",
+			"attr": "$.message.order.payments[*].params.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_52",
+			"attr": "$.message.order.payments[*].params.amount",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_53",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_54",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_55",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_56",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_57",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_58",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_59",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_60",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_61",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_62",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_63",
+			"attr": "$.message.order.cancellation_terms[*].cancel_by.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_64",
+			"attr": "$.message.order.cancellation_terms[*].cancellation_fee.percentage",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_cancel"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.order.payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.order.payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.order.payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	],
+	"on_status": [
+		{
+			"_NAME_": "validate_attribute_1",
+			"attr": "$.context.location.country.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_2",
+			"attr": "$.context.location.city.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_3",
+			"attr": "$.context.domain",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_4",
+			"attr": "$.context.timestamp",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_5",
+			"attr": "$.context.bap_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_6",
+			"attr": "$.context.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_7",
+			"attr": "$.context.message_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_8",
+			"attr": "$.context.version",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_9",
+			"attr": "$.context.action",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_10",
+			"attr": "$.context.bap_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_11",
+			"attr": "$.context.ttl",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_12",
+			"attr": "$.context.bpp_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_13",
+			"attr": "$.context.bpp_uri",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_14",
+			"attr": "$.message.order.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_15",
+			"attr": "$.message.order.status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_16",
+			"attr": "$.message.order.items[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_17",
+			"attr": "$.message.order.items[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_18",
+			"attr": "$.message.order.items[*].descriptor.code",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_19",
+			"attr": "$.message.order.items[*].price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_20",
+			"attr": "$.message.order.items[*].price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_21",
+			"attr": "$.message.order.items[*].quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_22",
+			"attr": "$.message.order.items[*].fulfillment_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_23",
+			"attr": "$.message.order.items[*].time.label",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_24",
+			"attr": "$.message.order.items[*].time.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_25",
+			"attr": "$.message.order.provider.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_26",
+			"attr": "$.message.order.provider.descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_27",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_28",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_29",
+			"attr": "$.message.order.fulfillments[*].stops[*].location.gps",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_30",
+			"attr": "$.message.order.fulfillments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_31",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_32",
+			"attr": "$.message.order.fulfillments[*].tags[*].display",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_33",
+			"attr": "$.message.order.fulfillments[*].vehicle.cargo_volumne",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_34",
+			"attr": "$.message.order.quote.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_35",
+			"attr": "$.message.order.quote.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_36",
+			"attr": "$.message.order.quote.breakup[*].title",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_37",
+			"attr": "$.message.order.quote.breakup[*].item.id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_38",
+			"attr": "$.message.order.payments[*].id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_39",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_40",
+			"attr": "$.message.order.payments[*].status",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_41",
+			"attr": "$.message.order.payments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_42",
+			"attr": "$.message.order.payments[*].params.transaction_id",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_43",
+			"attr": "$.message.order.payments[*].params.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_44",
+			"attr": "$.message.order.payments[*].params.amount",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_45",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_46",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_47",
+			"attr": "$.message.order.payments[*].tags[*].list[*].descriptor.name",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_48",
+			"attr": "$.message.order.payments[*].collected_by",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_49",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_50",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_51",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_52",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_53",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_54",
+			"attr": "$.message.order.payments[*].tags[*].list[*].value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_55",
+			"attr": "$.message.order.cancellation_terms[*].cancel_by.duration",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_56",
+			"attr": "$.message.order.cancellation_terms[*].cancellation_fee.percentage",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_57",
+			"attr": "$.message.order.items[*].category_ids[*]",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_58",
+			"attr": "$.message.order.provider.time.range.start",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_59",
+			"attr": "$.message.order.provider.time.range.end",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_60",
+			"attr": "$.message.order.fulfillments[*].type",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_61",
+			"attr": "$.message.order.quote.breakup[*].item.price.currency",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_62",
+			"attr": "$.message.order.quote.breakup[*].item.price.value",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_63",
+			"attr": "$.message.order.quote.breakup[*].item.quantity.selected.count",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_64",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.url",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_65",
+			"attr": "$.message.order.cancellation_terms[*].external_ref.mimetype",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_66",
+			"attr": "$.message.order.created_at",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_attribute_67",
+			"attr": "$.message.order.updated_at",
+			"nulls": [null],
+			"_RETURN_": "attr none in nulls"
+		},
+		{
+			"_NAME_": "validate_enum_1",
+			"enumList": ["on_status"],
+			"enumPath": "$.context.action",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_2",
+			"enumList": ["IND"],
+			"enumPath": "$.context.location.country.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_3",
+			"enumList": ["std:080"],
+			"enumPath": "$.context.location.city.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_4",
+			"enumList": ["ONDC:TRV11"],
+			"enumPath": "$.context.domain",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_5",
+			"enumList": ["SJT", "SFSJT", "RJT", "PASS"],
+			"enumPath": "$.message.order.items[*].descriptor.code",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_6",
+			"enumList": ["BUS", "METRO"],
+			"enumPath": "$.message.order.fulfillments[*].vehicle.category",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_7",
+			"enumList": ["ROUTE", "TRIP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_8",
+			"enumList": ["START", "END", "INTERMEDIATE_STOP", "TRANSIT_STOP"],
+			"enumPath": "$.message.order.fulfillments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_9",
+			"enumList": ["QR"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_10",
+			"enumList": ["UNCLAIMED", "CLAIMED"],
+			"enumPath": "$.message.order.fulfillments[*].stops[*].authorization.status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_11",
+			"enumList": ["NOT-PAID", "PAID"],
+			"enumPath": "$.message.order.payments[*].status",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_12",
+			"enumList": ["BPP", "BAP"],
+			"enumPath": "$.message.order.payments[*].collected_by",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_13",
+			"enumList": ["PRE-ORDER", "ON-FULFILLMENT", "POST-FULFILLMENT"],
+			"enumPath": "$.message.order.payments[*].type",
+			"_RETURN_": "enumPath all in enumList"
+		},
+		{
+			"_NAME_": "validate_enum_14",
+			"enumList": [
+				"BASE_PRICE",
+				"REFUND",
+				"CANCELLATION_CHARGES",
+				"OFFER",
+				"TOLL"
+			],
+			"enumPath": "$.message.order.quote.breakup[*].title",
+			"_RETURN_": "enumPath all in enumList"
+		}
+	]
+}

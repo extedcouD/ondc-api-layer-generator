@@ -21,6 +21,8 @@ import {
 } from "../../constants/operation-constants";
 import {
 	extractOperationType,
+	filterByFirstOccurrence,
+	isRegexValid,
 	replaceLogicalOperands,
 	validateBrackets,
 } from "./utils";
@@ -53,7 +55,6 @@ export function compileSingleConfig(config: CodeConfig) {
 		)
 	);
 }
-
 function compileVariables(config: CodeConfig) {
 	const keys = Object.keys(config);
 	let result = "";
@@ -95,13 +96,17 @@ function compileOperations(config: CodeConfig, retrn: string) {
 	}
 	const converted = brackates.extractedTexts
 		.filter((s) => !["&&", "||"].includes(s))
-		.map((s) => compileSingleOperation(s, variableNames));
+		.map((s) => compileSingleOperation(s, variableNames, config));
 	const returnCode = replaceLogicalOperands(retrn, converted);
 	return returnCode;
 }
-
-function compileSingleOperation(operation: string, variables: string[]) {
+function compileSingleOperation(
+	operation: string,
+	variables: string[],
+	config: CodeConfig
+) {
 	const operationType = extractOperationType(operation, variables);
+	variables = filterByFirstOccurrence(operation, variables);
 	if (!knownOperations.includes(operationType)) {
 		throw new Error("Unknown operation type: " + operationType);
 	}
@@ -109,6 +114,19 @@ function compileSingleOperation(operation: string, variables: string[]) {
 		return UnaryOperationTemplate(variables[0], operationType);
 	}
 	if (knownBinaryOperations.includes(operationType)) {
+		if (operationType === "FOLLOW_REGEX") {
+			const regex = config[variables[1]];
+			if (!Array.isArray(regex)) {
+				throw new Error(
+					"Invalid regex type: cannot have a json path in regex: " + regex
+				);
+			}
+			for (const r of regex) {
+				if (!isRegexValid(r)) {
+					throw new Error("Invalid regex: " + r);
+				}
+			}
+		}
 		return BinaryOperationTemplate(variables[0], variables[1], operationType);
 	}
 
