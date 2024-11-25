@@ -1,0 +1,41 @@
+{
+	"on_search": [
+		{
+			"_NAME_": "payments_test",
+			"_SCOPE_": "$.message.order.payments[*]",
+			"status": "$.status",
+			"enumList": ["PAID"],
+			"transId": "$.params.transaction_id",
+			"nulls": [null],
+			"_CONTINUE_": "status none in enumList",
+			"_RETURN_": "transId none in nulls"
+		},
+		{
+			"_NAME_": "valid_trans_id",
+			"id": "$.context.transaction_id",
+			"saved": "$.cache.transaction_id",
+			"_RETURN_": "id equal to saved"
+		},
+		{
+			"_NAME_": "finder_fees_check",
+			"_SCOPE_": "$.message.order.payments[*].tags[?(@.descriptor.code=='BUYER_FINDER_FEES')]",
+			"subTags": "$.list[*].descriptor.code",
+			"enumList": [
+				"BUYER_FINDER_FEES_PERCENTAGE",
+				"BUYER_FINDER_FEES_TYPE",
+				"BUYER_FINDER_FEES_AMOUNT"
+			],
+			"_RETURN_": "arr1 sum equal to arr2"
+		},
+		{
+			"_NAME_": "finder_fees_percetage_check",
+			"_SCOPE_": "$.message.order.payments[*].tags[?(@.descriptor.code=='BUYER_FINDER_FEES')].list[?(@.descriptor.code=='BUYER_FINDER_FEES_PERCENTAGE')]",
+			"ARRAY": {},
+			"OBJECT": {},
+			"value": "$.value",
+			"reg": ["^[0-9]{1,2}$"],
+			"nulls": [null],
+			"_RETURN_": "(value none in nulls) && (value follow regex reg)"
+		}
+	]
+}

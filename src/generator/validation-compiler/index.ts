@@ -43,6 +43,7 @@ export function compileSingleConfig(config: CodeConfig) {
 	const continueCode = config._CONTINUE_
 		? compileOperations(config, config._CONTINUE_)
 		: "false";
+	const errorCode = config._ERROR_CODE_ ?? 30000;
 	const boiler = boilerplat;
 	return (
 		boiler +
@@ -51,7 +52,8 @@ export function compileSingleConfig(config: CodeConfig) {
 			scopeQuery,
 			variablesCode,
 			continueCode,
-			operationCode
+			operationCode,
+			errorCode
 		)
 	);
 }
@@ -70,7 +72,7 @@ function compileVariables(config: CodeConfig) {
 		}
 		if (Array.isArray(config[key])) {
 			result += "\n\t" + staticVariableTemplate(key, config[key]);
-		} else {
+		} else if (typeof config[key] === "string") {
 			result += "\n\t" + pathVariableTemplate(key, config[key]);
 		}
 	}

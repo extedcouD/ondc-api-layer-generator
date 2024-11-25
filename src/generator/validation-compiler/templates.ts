@@ -7,18 +7,23 @@ export const baseFunction = (
 	contextQuery: string,
 	variablesCode: string,
 	continueCode: string,
-	operationCode: string
+	operationCode: string,
+	errorCode: number
 ) => `
-function ${name}(payload : any){
+function ${name}(payload : any,externalData = {}){
     const scope = payloadUtils.getJsonPath(payload, "${contextQuery}");
 	for(const testObj of scope){
+		testObj._EXTERNAL = externalData;
 		${variablesCode}
 		const skipCheck = ${continueCode};
 		if(skipCheck) continue;
 		const output = ${operationCode};
-		if(!output) return false;
+		if(!output) return {
+			valid: false,
+			errorCode: ${errorCode}
+		}
 	}
-    return true;
+    return {valid: true};
 }`;
 
 export const staticVariableTemplate = (

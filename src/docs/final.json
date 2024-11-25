@@ -7,6 +7,12 @@
 			"_RETURN_": "attr none in nulls"
 		},
 		{
+			"_NAME_": "check_stops",
+			"stops": "$.message.location.stops.type",
+			"enumList": ["START", "END"],
+			"_RETURN_": "enumList all in stops"
+		},
+		{
 			"_NAME_": "validate_attribute_2",
 			"attr": "$.context.location.city.code",
 			"nulls": [null],
@@ -618,6 +624,17 @@
 		}
 	],
 	"confirm": [
+		{
+			"_NAME_": "payments_test",
+			"_SCOPE_": "$.message.order.payments[*]",
+			"status": "$.status",
+			"enumList": ["PAID"],
+			"transId": "$.params.transaction_id",
+			"nulls": [null],
+			"_CONTINUE_": "status none in enumList",
+			"mult": "qant * price",
+			"_RETURN_": "mult equal to total"
+		},
 		{
 			"_NAME_": "validate_attribute_1",
 			"attr": "$.context.location.country.code",

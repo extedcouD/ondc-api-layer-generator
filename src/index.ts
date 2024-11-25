@@ -3,10 +3,11 @@ import { compileSingleConfig } from "./generator/validation-compiler";
 import path from "path";
 import prettier from "prettier";
 import { createSchemas } from "./generator/beckn-schema/extract-schema";
-
+import yaml from "js-yaml";
 import { convertToYamlWithRefs } from "./utils/yaml-ref";
 import { compileConfigFor } from "./generator/validation-compiler/compile-complete";
 import { finalMasterTemplate } from "./generator/validation-compiler/bigger-templates";
+import { generateErrorFile } from "./generator/error-compiler/generate-error-file";
 const test = {
 	_NAME_: "checkActionMandatory",
 	action: "context.action",
@@ -15,6 +16,26 @@ const test = {
 };
 
 const main = async () => {
+	await createSampleErrors();
+	await createSampleValidations();
+	// await createSampleSchemas();
+};
+
+main();
+async function createSampleSchemas() {
+	const build = readFileSync(
+		"/Users/rudranshsinghal/ondc/automation-utility/test-packages/ondc-firewall-generator/src/docs/sample-build.yaml",
+		"utf8"
+	);
+	const output = await createSchemas(build);
+	for (const key in output) {
+		writeFileSync(
+			path.resolve(__dirname, `../validation-api/schemas/${key}.yaml`),
+			convertToYamlWithRefs(output[key])
+		);
+	}
+}
+async function createSampleValidations() {
 	const config = readFileSync(
 		path.resolve(__dirname, "./docs/final.json"),
 		"utf-8"
@@ -47,18 +68,22 @@ const main = async () => {
 		),
 		formattedMasterCode
 	);
+}
 
-	// const build = readFileSync(
-	// 	"/Users/rudranshsinghal/ondc/automation-utility/test-packages/ondc-firewall-generator/src/docs/sample-build.yaml",
-	// 	"utf8"
-	// );
-	// const output = await createSchemas(build);
-	// for (const key in output) {
-	// 	writeFileSync(
-	// 		path.resolve(__dirname, `../validation-api/schemas/${key}.yaml`),
-	// 		convertToYamlWithRefs(output[key])
-	// 	);
-	// }
-};
-
-main();
+async function createSampleErrors() {
+	const buildYaml = readFileSync(
+		path.resolve(__dirname, "./docs/sample-build.yaml"),
+		"utf8"
+	);
+	const build = yaml.load(buildYaml) as any;
+	const errors = build["x-errorcodes"];
+	const errorFile = generateErrorFile(errors.code);
+	const formattedErrorFile = await prettier.format(errorFile, {
+		parser: "typescript",
+		tabWidth: 4,
+	});
+	writeFileSync(
+		path.resolve(__dirname, `../validation-api/validations/errors/errors.ts`),
+		formattedErrorFile
+	);
+}
